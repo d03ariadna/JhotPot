@@ -19,8 +19,8 @@ export const AuthContextProvider = ({ children }) => {
         //onAuthStateChanged is a listener that listens to the user authentication state
 
         setTimeout(() => {
-            setLoading(false);
-            setIsAuth(false);
+            setLoading(true);
+            setIsAuth(true);
         }, 3000);
 
     }, []);
