@@ -1,8 +1,25 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 export default function ProfileHeader() {
+  const [activeTab, setActiveTab] = useState('Recipes');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const categories = ['All', 'Chinese', 'Bangla', 'Continental'];
+  const recipes = [
+    {
+      category: 'Drinks',
+      title: 'Spiced Chai Cafe',
+      image: 'https://via.placeholder.com/100', // Cambia esta URL a la imagen real
+    },
+    {
+      category: 'Chinese',
+      title: 'Fried Crispy Chicken with sausage',
+      image: 'https://via.placeholder.com/100', // Cambia esta URL a la imagen real
+    },
+  ];
+
   return (
     <View className="flex-1 bg-white">
       {/* Header con icono de notificación */}
@@ -37,96 +54,132 @@ export default function ProfileHeader() {
         </View>
       </View>
 
-     {/* Botón de follow */}
-<View className="flex-row justify-center items-center mt-4 space-x-4">
-  <TouchableOpacity className="flex-1 bg-gray-200 py-3 rounded-md items-center mx-5">
-    <Text className="text-gray-700 font-bold">Edit Profile</Text>
-  </TouchableOpacity>
-  <TouchableOpacity className="bg-gray-200 p-3 rounded-md mx-5">
-    <Ionicons name="cloud-outline" size={24} color="orange" />
-  </TouchableOpacity>
-</View>
-
-
-      {/* Tabs de Recipes y Reviews */}
-      <View className="flex-row justify-center mt-5 border-b border-gray-200">
-              <TouchableOpacity className="px-4 py-2 ml-4">
-          <Text className="text-gray-500">Recipies (240)</Text>
+      {/* Botón de Editar perfil y subir archivo */}
+      <View className="flex-row justify-center items-center mt-4 space-x-4">
+        <TouchableOpacity className="flex-1 bg-gray-200 py-3 rounded-md items-center mx-5">
+          <Text className="text-gray-700 font-bold">Edit Profile</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="px-4 py-2 border-b-2 border-orange-500">
-          <Text className="text-orange-500 font-bold">Reviews</Text>
+        <TouchableOpacity className="bg-gray-200 p-3 rounded-md mx-5">
+          <Ionicons name="cloud-outline" size={24} color="orange" />
         </TouchableOpacity>
       </View>
 
+      {/* Tabs de Recipes y Reviews */}
+      <View className="flex-row justify-center mt-5 border-b border-gray-200">
+        <TouchableOpacity onPress={() => setActiveTab('Recipes')} className={`px-4 py-2 ${activeTab === 'Recipes' ? 'border-b-2 border-orange-500' : ''}`}>
+          <Text className={activeTab === 'Recipes' ? 'text-orange-500 font-bold' : 'text-gray-500'}>Recipes (598)</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setActiveTab('Reviews')} className={`px-4 py-2 ${activeTab === 'Reviews' ? 'border-b-2 border-orange-500' : ''}`}>
+          <Text className={activeTab === 'Reviews' ? 'text-orange-500 font-bold' : 'text-gray-500'}>Reviews</Text>
+        </TouchableOpacity>
+      </View>
 
-      {/* Lista de Reviews */}
-      <ScrollView className="px-6 mt-8 flex-1">
-        {/* Review 1 */}
-        <View className="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
-          <View className="flex-row items-start">
-            <Image
-              source={{ uri: 'https://via.placeholder.com/50' }} // Imagen de usuario
-              className="w-12 h-12 rounded-full mr-4"
-            />
-            <View style={{ flex: 1 }}>
-              <View className="flex-row justify-between items-center">
-                <Text className="font-bold">John Smith</Text>
-                <Text className="text-gray-500">50 min ago</Text>
+      {activeTab === 'Recipes' ? (
+        <>
+          {/* Filtros de categoría */}
+          <ScrollView horizontal className="flex flex-row mt-2 px-5 space-x-10">
+            {categories.map((category) => (
+              <TouchableOpacity
+              style ={{marginRight:20, alignItems:"center", width:100, height:50}}
+                key={category}
+                onPress={() => setSelectedCategory(category)}
+                className={`rounded-lg h-[100px] w-auto px-5 py-5 ${selectedCategory === category ? 'bg-orange-100' : 'bg-gray-100'
+                  }`}
+              >
+              
+              <Text className={selectedCategory === category ? 'text-orange-500 font-bold' : 'text-gray-500'}>
+                  {category}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+
+          {/* Lista de Recetas */}
+          <ScrollView className="px-6 mt-4 flex-1 pb-[300px]">
+            {recipes.map((recipe, index) => (
+              <View key={index} className="bg-gray-100 p-4 rounded-lg shadow-md mb-4 flex-row">
+                <Image
+                  source={{ uri: recipe.image }}
+                  className="w-20 h-20 rounded-lg mr-4"
+                />
+                <View style={{ flex: 1 }}>
+                  <Text className="text-orange-500 font-bold">{recipe.category}</Text>
+                  <Text className="font-bold text-lg mt-1">{recipe.title}</Text>
+                </View>
               </View>
-              <View className="flex-row items-center mt-1">
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star-outline" size={16} color="orange" />
-              </View>
-              <Text className="text-gray-700 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text>
-              <View className="flex-row items-center mt-2">
-                <Ionicons name="heart-outline" size={16} color="gray" />
-                <Text className="text-gray-500 ml-1">5</Text>
-                <Ionicons name="happy-outline" size={16} color="orange" className="ml-4" />
+            ))}
+          </ScrollView>
+        </>
+      ) : (
+        /* Lista de Reviews */
+        <ScrollView className="px-6 mt-8 flex-1">
+          {/* Review 1 */}
+          <View className="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
+            <View className="flex-row items-start">
+              <Image
+                source={{ uri: 'https://via.placeholder.com/50' }} // Imagen de usuario
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <View style={{ flex: 1 }}>
+                <View className="flex-row justify-between items-center">
+                  <Text className="font-bold">John Smith</Text>
+                  <Text className="text-gray-500">50 min ago</Text>
+                </View>
+                <View className="flex-row items-center mt-1">
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star-outline" size={16} color="orange" />
+                </View>
+                <Text className="text-gray-700 mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </Text>
+                <View className="flex-row items-center mt-2">
+                  <Ionicons name="heart-outline" size={16} color="gray" />
+                  <Text className="text-gray-500 ml-1">5</Text>
+                  <Ionicons name="happy-outline" size={16} color="orange" className="ml-4" />
+                </View>
               </View>
             </View>
           </View>
-        </View>
 
-        {/* Review 2 */}
-        <View className="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
-          <View className="flex-row items-start">
-            <Image
-              source={{ uri: 'https://via.placeholder.com/50' }} // Imagen de usuario
-              className="w-12 h-12 rounded-full mr-4"
-            />
-            <View style={{ flex: 1 }}>
-              <View className="flex-row justify-between items-center">
-                <Text className="font-bold">Alana Jacks</Text>
-                <Text className="text-gray-500">1 day ago</Text>
-              </View>
-              <View className="flex-row items-center mt-1">
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star" size={16} color="orange" />
-                <Ionicons name="star-outline" size={16} color="orange" />
-              </View>
-              <Text className="text-gray-700 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text>
-              <View className="flex-row items-center mt-2">
-                <Ionicons name="heart-outline" size={16} color="gray" />
-                <Text className="text-gray-500 ml-1">7</Text>
-                <Ionicons name="happy-outline" size={16} color="orange" className="ml-4" />
+          {/* Review 2 */}
+          <View className="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
+            <View className="flex-row items-start">
+              <Image
+                source={{ uri: 'https://via.placeholder.com/50' }} // Imagen de usuario
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <View style={{ flex: 1 }}>
+                <View className="flex-row justify-between items-center">
+                  <Text className="font-bold">Alana Jacks</Text>
+                  <Text className="text-gray-500">1 day ago</Text>
+                </View>
+                <View className="flex-row items-center mt-1">
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star" size={16} color="orange" />
+                  <Ionicons name="star-outline" size={16} color="orange" />
+                </View>
+                <Text className="text-gray-700 mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </Text>
+                <View className="flex-row items-center mt-2">
+                  <Ionicons name="heart-outline" size={16} color="gray" />
+                  <Text className="text-gray-500 ml-1">7</Text>
+                  <Ionicons name="happy-outline" size={16} color="orange" className="ml-4" />
+                </View>
               </View>
             </View>
           </View>
-        </View>
-      </ScrollView>
-      
+        </ScrollView>
+      )}
     </View>
   );
 }
+
 
 
 
