@@ -39,13 +39,13 @@ export default function HomeScreen() {
           showsHorizontalScrollIndicator={false} // Espacio al inicio y al final
         >
           {/* Tarjeta 1 */}
-          <RecipeCard />
+          <RecipeCard img={require('@/assets/images/noodle.jpg')} color={'bg-[#ffe3c7]'} />
 
           {/* Tarjeta 2 */}
-          <RecipeCard />
+          <RecipeCard img={require('@/assets/images/beet.jpg')} color={'bg-[#ffd1da]'}/>
 
           {/* Tarjeta 3 */}
-          <RecipeCard />
+          <RecipeCard img={require('@/assets/images/tuna.jpg')} color={'bg-[#d0dec8]'}/>
 
           {/* Añade más tarjetas según sea necesario */}
         </ScrollView>

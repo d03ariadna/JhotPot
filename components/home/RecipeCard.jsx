@@ -4,13 +4,13 @@ import { Ionicons } from '@expo/vector-icons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
-export default function RecipeCard() {
+export default function RecipeCard({img, color}) {
   return (
-    <View style={{height: hp(55), width: wp(65), padding: hp(3), marginTop: wp(8), alignSelf: 'center'}} className="relative bg-orange-100 rounded-3xl">
+    <View style={{height: hp(55), width: wp(65), padding: hp(3), marginTop: wp(8), alignSelf: 'center'}} className={`relative ${color} rounded-3xl`}>
       {/* Imagen de comida en la parte superior */}
       <View className="absolute -top-16 -right-28 -translate-x-1/2 rounded-full w-52 h-52 shadow-lg justify-center items-center">
         <Image
-          source={require('@/assets/images/noodle.jpg')} // Reemplaza con tu imagen
+          source={img} // Reemplaza con tu imagen
           // className="w-48 h-48 rounded-full bg-white border-2 border-lime-400"
           className='w-48 h-48 rounded-full'
         />
