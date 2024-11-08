@@ -60,7 +60,7 @@ export default function ProfileHeader() {
           <Text className="text-gray-700 font-bold">Edit Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity className="bg-gray-200 p-3 rounded-md mx-5">
-          <Ionicons name="cloud-outline" size={24} color="orange" />
+          <Ionicons name="cloud-upload" size={24} color="orange" />
         </TouchableOpacity>
       </View>
 
@@ -80,7 +80,7 @@ export default function ProfileHeader() {
           <ScrollView horizontal className="flex flex-row mt-2 px-5 space-x-10">
             {categories.map((category) => (
               <TouchableOpacity
-              style ={{marginRight:20, alignItems:"center", width:100, height:50}}
+              style ={{marginRight:20, alignItems:"center", width:120, height:50, borderRadius:20}}
                 key={category}
                 onPress={() => setSelectedCategory(category)}
                 className={`rounded-lg h-[100px] w-auto px-5 py-5 ${selectedCategory === category ? 'bg-orange-100' : 'bg-gray-100'
