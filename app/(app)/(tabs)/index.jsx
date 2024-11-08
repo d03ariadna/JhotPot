@@ -1,9 +1,11 @@
 import { Image, StyleSheet, Platform, ScrollView, View, Text } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import SideBar from '@/components/home/SideBar';
 import RecipeCard from '@/components/home/RecipeCard';
 import { StatusBar } from 'expo-status-bar';
+import CountryCard from '@/components/home/CountryCard';
 
 export default function HomeScreen() {
   return (
@@ -13,32 +15,27 @@ export default function HomeScreen() {
       <SideBar/>
 
       {/* Contenido desplazable */}
-      <View className="pt-16 h-[95%]  w-[90%] flex-col justify-between pl-8 p-4">
+      <View style={{height: hp(93), width: wp(78), marginLeft: wp(4), paddingTop: hp(6)}} className="flex-col justify-between">
         {/* Aquí va el contenido que se desplazará */}
-        <Text className="text-xl tracking-wider font-medium mb-4">
+        <Text className="text-xl tracking-wider font-medium">
           Simple recipy with your 
           <Text className='text-primary font-semibold'> fridge's ingredients</Text>
         </Text>
 
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className='flex-row'>
-          <View className='bg-fourth w-20 h-24 mr-7 shadow-black shadow-xl rounded-2xl flex-1 justify-center items-center'>
-            <Text>All</Text>
-          </View>
-          <View className='bg-fourth w-20 h-24 mr-7 shadow-black shadow-md rounded-2xl flex-1 justify-center items-center'>
-            <Text>All</Text>
-          </View>
-          <View className='bg-fourth w-20 h-24 mr-7 shadow-black shadow-md rounded-2xl flex-1 justify-center items-center'>
-            <Text>All</Text>
-          </View>
-          <View className='bg-fourth w-20 h-24 mr-7 shadow-black shadow-md rounded-2xl flex-1 justify-center items-center'>
-            <Text>All</Text>
-          </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className='flex-row pb-0'>
+          <CountryCard title={'American'} img={require('@/assets/images/countries/american.png')} />
+          <CountryCard title={'Italian'} img={require('@/assets/images/countries/italian.png')} />
+          <CountryCard title={'Japanese'} img={require('@/assets/images/countries/japanese.png')} />
+          <CountryCard title={'Mexican'} img={require('@/assets/images/countries/mexican.png')} />
+          <CountryCard title={'Chinese'} img={require('@/assets/images/countries/chinese.png')} />
+          <CountryCard title={'Russian'} img={require('@/assets/images/countries/russian.png')} />
+          <CountryCard title={'French'} img={require('@/assets/images/countries/french.png')} />
         </ScrollView>
 
         <ScrollView
-          className='  flex flex-grow'
+          className='flex flex-grow'
           horizontal={true}
-          contentContainerStyle={{ padding: 10,  alignItems: 'flex-end', gap: 20}} // Espacio al inicio y al final
+          contentContainerStyle={{ paddingLeft: hp(1), gap: 20}} // Espacio al inicio y al final
           showsHorizontalScrollIndicator={false} // Espacio al inicio y al final
         >
           {/* Tarjeta 1 */}
