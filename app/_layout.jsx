@@ -2,12 +2,13 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import { View } from 'react-native';
+import { GestureHandlerRootView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { Slot, useRouter, useSegments } from "expo-router";
 import { useFonts, Poppins_300Light, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import '../global.css';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { AuthContextProvider, useAuth } from '@/context/AuthContext';
+import { Keyboard, SafeAreaView } from 'react-native';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -21,15 +22,21 @@ const MainLayout = () => {
     if (typeof isAuth === 'undefined') return;
 
     const inApp = segments[0] === '(app)';
+    const isSignIn = segments[0] === 'signIn';
+    const isSignUp = segments[0] === 'signUp';
 
     if (isAuth && !inApp) {
       router.replace('(tabs)/');
-    } else if (!isAuth) {
+    } else if (!isAuth && !isSignIn && !isSignUp) {
       router.replace('/signIn');
     }
   }, [isAuth, segments, router]);
 
-  return <Slot />;
+  return (
+    
+          <Slot />
+        
+  );
 };
 
 export default function RootLayout() {

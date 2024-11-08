@@ -21,24 +21,32 @@ export const AuthContextProvider = ({ children }) => {
         setTimeout(() => {
             setLoading(false);
             setIsAuth(false);
-        }, 3000);
+        }, 2000);
 
     }, []);
 
     const login = async (email, password) => {
-        try {
-            // await auth.signInWithEmailAndPassword(email, password);
-        } catch (error) {
-            console.log(error);
-        }
+        // try {
+        //     // await auth.signInWithEmailAndPassword(email, password);
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        alert('Log in from auth!');
+        setTimeout(() => {
+            setIsAuth(true);
+        }, 1000);
     };
 
     const register = async (email, password, username, profileUrl) => {
-        try {
-            // await auth.signInWithEmailAndPassword(email, password);
-        } catch (error) {
-            console.log(error);
-        }
+        // try {
+        //     // await auth.signInWithEmailAndPassword(email, password);
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        alert('Registered from auth!');
+        setTimeout(() => {
+            setIsAuth(true);
+        }, 1000);
     };
 
     const logOut = async () => {
