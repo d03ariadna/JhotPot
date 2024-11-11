@@ -56,10 +56,12 @@ export default function Chef() {
 
       {/* Botón de Editar perfil y subir archivo */}
       <View className="flex-row justify-center items-center mt-4 space-x-4">
-        <TouchableOpacity className="flex-1 bg-orange-500 py-3 rounded-md items-center mx-5">
-          <Text className="text-gray-700 font-bold">Follow</Text>
+        <TouchableOpacity className="flex-1 bg-gray-200 py-3 rounded-md items-center mx-5">
+          <Text className="text-gray-700 font-bold">Edit Profile</Text>
         </TouchableOpacity>
-       
+        <TouchableOpacity className="bg-gray-200 p-3 rounded-md mx-5">
+          <Ionicons name="cloud-upload" size={24} color="orange" />
+        </TouchableOpacity>
       </View>
 
       {/* Tabs de Recipes y Reviews */}
@@ -78,7 +80,7 @@ export default function Chef() {
           <ScrollView horizontal className="flex flex-row mt-2 px-5 space-x-10">
             {categories.map((category) => (
               <TouchableOpacity
-              style ={{marginRight:20, alignItems:"center", width:120, height:50, borderRadius:20}}
+              style ={{marginRight:20, alignItems:"center", width:120, height:50, borderRadius:10}}
                 key={category}
                 onPress={() => setSelectedCategory(category)}
                 className={`rounded-lg h-[100px] w-auto px-5 py-5 ${selectedCategory === category ? 'bg-orange-100' : 'bg-gray-100'
