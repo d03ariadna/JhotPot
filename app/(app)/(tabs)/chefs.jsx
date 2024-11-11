@@ -56,12 +56,10 @@ export default function Chef() {
 
       {/* Botón de Editar perfil y subir archivo */}
       <View className="flex-row justify-center items-center mt-4 space-x-4">
-        <TouchableOpacity className="flex-1 bg-gray-200 py-3 rounded-md items-center mx-5">
-          <Text className="text-gray-700 font-bold">Edit Profile</Text>
+        <TouchableOpacity className="flex-1 bg-orange-500 py-3 rounded-md items-center mx-5">
+          <Text className="text-gray-700 font-bold">Follow</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="bg-gray-200 p-3 rounded-md mx-5">
-          <Ionicons name="cloud-upload" size={24} color="orange" />
-        </TouchableOpacity>
+        
       </View>
 
       {/* Tabs de Recipes y Reviews */}
