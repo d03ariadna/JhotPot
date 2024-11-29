@@ -34,8 +34,8 @@ export default function UserView({currentUser, userInfo, userRecipes, action}) {
                     {!currentUser
                         ? <Back/>
                         :
-                        // <LogoutButton/>
-                        <Text className='text-white'>h</Text>
+                        <LogoutButton/>
+                        // <Text className='text-white'>h</Text>
                     }
                 <TouchableOpacity className='mt-9'>
                     <Ionicons name="notifications" size={24} color={Colors.light['third']} />
