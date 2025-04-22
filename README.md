@@ -11,18 +11,22 @@ JhotPot is a mobile application designed to simplify food management and enhance
 ### Food Management
 - Add ingredients manually or via QR code scanning.
 - Ingredient input and carousel for displaying ingredients.
-![VideoCapture_20250422-081032](https://github.com/user-attachments/assets/961ed9d3-d754-48f3-a0f8-f4c411ba8f1c)
-![VideoCapture_20250422-080936](https://github.com/user-attachments/assets/62c6ade2-d87a-45c8-a8b2-fe0501d5c4f5)
-![VideoCapture_20250422-080929](https://github.com/user-attachments/assets/331a4eb5-cee6-4034-ba9c-3fe63b895a61)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/961ed9d3-d754-48f3-a0f8-f4c411ba8f1c" width="32%" />
+  <img src="https://github.com/user-attachments/assets/62c6ade2-d87a-45c8-a8b2-fe0501d5c4f5" width="32%" />
+  <img src="https://github.com/user-attachments/assets/331a4eb5-cee6-4034-ba9c-3fe63b895a61" width="32%" />
+</div>
 
 
 ### Recipes
 - Filter recipes based on various criteria.
 - Display recipe cards and manage country-specific recipes.
-![VideoCapture_20250422-080627](https://github.com/user-attachments/assets/0dcb5fb1-0db5-4178-b954-0318d7c748ba)
-![VideoCapture_20250331-165216](https://github.com/user-attachments/assets/49a8efde-bc6a-44e2-a6a2-32dfc97253c9)
-![VideoCapture_20250331-165416](https://github.com/user-attachments/assets/884098d3-4971-4b01-9542-d1abf9c57d3c)
-![VideoCapture_20250422-080844](https://github.com/user-attachments/assets/e232fb54-2db5-4bde-a721-844383632ac5)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0dcb5fb1-0db5-4178-b954-0318d7c748b" width="24%" />
+  <img src="https://github.com/user-attachments/assets/49a8efde-bc6a-44e2-a6a2-32dfc97253c9" width="24%" />
+  <img src="https://github.com/user-attachments/assets/884098d3-4971-4b01-9542-d1abf9c57d3c" width="24%" />
+  <img src="https://github.com/user-attachments/assets/e232fb54-2db5-4bde-a721-844383632ac5" width="24%" />
+</div>
 
 ### User Profile
 - Manage user profiles, including profile pictures and recipe sections.
