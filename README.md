@@ -32,6 +32,16 @@ JhotPot is a mobile application designed to simplify food management and enhance
 - **TypeScript**: For type safety and better code maintainability.
 - **Tailwind CSS**: For styling.
 
+## Main APIs and Components from Expo
+The project leverages several Expo APIs and components to enhance functionality:
+- **expo-camera**: Used for QR code scanning and camera functionalities.
+- **expo-media-library**: For saving and managing media files.
+- **expo-sharing**: To enable sharing of files and data.
+- **expo-status-bar**: For customizing the status bar appearance.
+- **expo-router**: For managing navigation and routing within the app.
+- **expo-font**: For loading custom fonts.
+- **expo-splash-screen**: To manage the app's splash screen during loading.
+
 ## Project Structure
 The project is organized into the following main folders:
 - `app/`: Contains the main application components and screens.
@@ -40,32 +50,3 @@ The project is organized into the following main folders:
 - `context/`: Context for managing global state, such as authentication.
 - `data/`: Static data like categories, countries, and recipes.
 - `utils/`: Utility functions for formatting and data manipulation.
-
-## How to Clone and Run the Project
-
-### Prerequisites
-- Node.js and npm installed on your system.
-- Expo CLI installed globally (`npm install -g expo-cli`).
-
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd JhotPot
-   ```
-
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Start the Expo development server:
-   ```bash
-   npx expo start
-   ```
-
-5. Use the Expo Go app on your mobile device to scan the QR code and run the application.
