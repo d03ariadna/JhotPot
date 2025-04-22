@@ -12,17 +12,20 @@ JhotPot is a mobile application designed to simplify food management and enhance
 - Add ingredients manually or via QR code scanning.
 - Ingredient input and carousel for displaying ingredients.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/961ed9d3-d754-48f3-a0f8-f4c411ba8f1c" width="32%" />
-  <img src="https://github.com/user-attachments/assets/62c6ade2-d87a-45c8-a8b2-fe0501d5c4f5" width="32%" />
-  <img src="https://github.com/user-attachments/assets/331a4eb5-cee6-4034-ba9c-3fe63b895a61" width="32%" />
+  <img src="https://github.com/user-attachments/assets/961ed9d3-d754-48f3-a0f8-f4c411ba8f1c" width="24%" />
+  <img src="https://github.com/user-attachments/assets/62c6ade2-d87a-45c8-a8b2-fe0501d5c4f5" width="24%" />
+  <img src="https://github.com/user-attachments/assets/331a4eb5-cee6-4034-ba9c-3fe63b895a61" width="24%" />
+  <img src="https://github.com/user-attachments/assets/f89c5a0d-8966-44a3-8483-a7851ac954fe" width="24%" />
 </div>
 
 
 ### Recipes
 - Filter recipes based on various criteria.
 - Display recipe cards and manage country-specific recipes.
+- ![VideoCapture_20250422-080627](https://github.com/user-attachments/assets/c0d1461c-55cb-40d0-97aa-217634711e35)
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0dcb5fb1-0db5-4178-b954-0318d7c748b" width="24%" />
+  <img src="https://github.com/user-attachments/assets/c0d1461c-55cb-40d0-97aa-217634711e35" width="24%" />
   <img src="https://github.com/user-attachments/assets/49a8efde-bc6a-44e2-a6a2-32dfc97253c9" width="24%" />
   <img src="https://github.com/user-attachments/assets/884098d3-4971-4b01-9542-d1abf9c57d3c" width="24%" />
   <img src="https://github.com/user-attachments/assets/e232fb54-2db5-4bde-a721-844383632ac5" width="24%" />
@@ -31,14 +34,21 @@ JhotPot is a mobile application designed to simplify food management and enhance
 ### User Profile
 - Manage user profiles, including profile pictures and recipe sections.
 - Add and view reviews.
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3138c2ea-b4d3-48b2-a010-fb84fdc9dbac" width="24%" />
+  <img src="https://github.com/user-attachments/assets/cdfcd8f6-6685-4054-83ce-dfa9587f5066" width="24%" />
+  <img src="https://github.com/user-attachments/assets/d5c62628-70df-4dfa-9194-01a2ed4a3252" width="24%" />
+  <img src="https://github.com/user-attachments/assets/83ba10bb-a947-4a5d-8331-83a6e6eda3f4" width="24%" />
+</div>
 
 ### Navigation
 - Multi-screen navigation with navigation bars and tab bars.
 
 ### Design and UI
 - Reusable UI components for a consistent and visually appealing design.
-![VideoCapture_20250422-080756](https://github.com/user-attachments/assets/b9d0a8c6-90ed-4e95-92a4-67cbb59dedba)
+<div>
+  <img src="https://github.com/user-attachments/assets/0da9b170-0fcc-434c-b197-c30ad28733bd" width="24%" />
+</div>
 
 
 ## Technologies Used
