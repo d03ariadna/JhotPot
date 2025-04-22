@@ -22,8 +22,6 @@ JhotPot is a mobile application designed to simplify food management and enhance
 ### Recipes
 - Filter recipes based on various criteria.
 - Display recipe cards and manage country-specific recipes.
-- ![VideoCapture_20250422-080627](https://github.com/user-attachments/assets/c0d1461c-55cb-40d0-97aa-217634711e35)
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c0d1461c-55cb-40d0-97aa-217634711e35" width="24%" />
   <img src="https://github.com/user-attachments/assets/49a8efde-bc6a-44e2-a6a2-32dfc97253c9" width="24%" />
